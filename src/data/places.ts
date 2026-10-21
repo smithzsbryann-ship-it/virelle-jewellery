@@ -1,0 +1,76 @@
+export const SALON_STATES = new Set(["NY", "CA", "IL", "FL", "TX", "MA", "GA", "DC", "WA"]);
+
+export const CITIES: Record<string, string[]> = {
+  AL: ["Birmingham", "Montgomery", "Huntsville", "Mobile"],
+  AK: ["Anchorage", "Fairbanks", "Juneau"],
+  AZ: ["Phoenix", "Tucson", "Scottsdale", "Mesa"],
+  AR: ["Little Rock", "Fayetteville", "Fort Smith"],
+  CA: ["Los Angeles", "San Francisco", "San Diego", "San Jose", "Sacramento"],
+  CO: ["Denver", "Boulder", "Colorado Springs", "Aspen"],
+  CT: ["Hartford", "New Haven", "Stamford", "Greenwich"],
+  DE: ["Wilmington", "Dover", "Newark"],
+  DC: ["Washington"],
+  FL: ["Miami", "Orlando", "Tampa", "Jacksonville", "Fort Lauderdale"],
+  GA: ["Atlanta", "Savannah", "Augusta"],
+  HI: ["Honolulu", "Hilo", "Kailua"],
+  ID: ["Boise", "Idaho Falls", "Coeur d'Alene"],
+  IL: ["Chicago", "Naperville", "Springfield", "Evanston"],
+  IN: ["Indianapolis", "Fort Wayne", "Bloomington"],
+  IA: ["Des Moines", "Iowa City", "Cedar Rapids"],
+  KS: ["Wichita", "Kansas City", "Topeka"],
+  KY: ["Louisville", "Lexington", "Bowling Green"],
+  LA: ["New Orleans", "Baton Rouge", "Lafayette"],
+  ME: ["Portland", "Bangor", "Augusta"],
+  MD: ["Baltimore", "Bethesda", "Annapolis"],
+  MA: ["Boston", "Cambridge", "Worcester", "Newton"],
+  MI: ["Detroit", "Ann Arbor", "Grand Rapids"],
+  MN: ["Minneapolis", "Saint Paul", "Rochester"],
+  MS: ["Jackson", "Biloxi", "Oxford"],
+  MO: ["St. Louis", "Kansas City", "Springfield"],
+  MT: ["Billings", "Missoula", "Bozeman"],
+  NE: ["Omaha", "Lincoln"],
+  NV: ["Las Vegas", "Reno", "Henderson"],
+  NH: ["Manchester", "Nashua", "Portsmouth"],
+  NJ: ["Newark", "Jersey City", "Princeton", "Hoboken"],
+  NM: ["Albuquerque", "Santa Fe"],
+  NY: ["New York", "Brooklyn", "Buffalo", "Albany"],
+  NC: ["Charlotte", "Raleigh", "Durham", "Asheville"],
+  ND: ["Fargo", "Bismarck"],
+  OH: ["Columbus", "Cleveland", "Cincinnati"],
+  OK: ["Oklahoma City", "Tulsa"],
+  OR: ["Portland", "Eugene", "Bend"],
+  PA: ["Philadelphia", "Pittsburgh", "Harrisburg"],
+  RI: ["Providence", "Newport"],
+  SC: ["Charleston", "Columbia", "Greenville"],
+  SD: ["Sioux Falls", "Rapid City"],
+  TN: ["Nashville", "Memphis", "Knoxville"],
+  TX: ["Dallas", "Houston", "Austin", "San Antonio"],
+  UT: ["Salt Lake City", "Park City", "Provo"],
+  VT: ["Burlington", "Montpelier"],
+  VA: ["Richmond", "Arlington", "Virginia Beach", "Alexandria"],
+  WA: ["Seattle", "Bellevue", "Spokane", "Tacoma"],
+  WV: ["Charleston", "Morgantown"],
+  WI: ["Milwaukee", "Madison"],
+  WY: ["Cheyenne", "Jackson"],
+};
+
+export const STATE_NAMES: Record<string, string> = {
+  AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California",
+  CO: "Colorado", CT: "Connecticut", DE: "Delaware", DC: "District of Columbia",
+  FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois",
+  IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana",
+  ME: "Maine", MD: "Maryland", MA: "Massachusetts", MI: "Michigan", MN: "Minnesota",
+  MS: "Mississippi", MO: "Missouri", MT: "Montana", NE: "Nebraska", NV: "Nevada",
+  NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York",
+  NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon",
+  PA: "Pennsylvania", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota",
+  TN: "Tennessee", TX: "Texas", UT: "Utah", VT: "Vermont", VA: "Virginia",
+  WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming",
+};
+
+export function courierFee(state: string) {
+  if (!state) return 0;
+  if (state === "AK" || state === "HI") return 345;
+  if (SALON_STATES.has(state)) return 95;
+  return 195;
+}
